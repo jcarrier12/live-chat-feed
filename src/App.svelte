@@ -1,27 +1,25 @@
-
 <script>
 	import ChatFeed from './components/ChatFeed.svelte';
-    import VideoEmbed from './components/VideoEmbed.svelte';
+	import VideoEmbed from './components/VideoEmbed.svelte';
 	import VideoSelector from './components/VideoSelector.svelte';
+  
 	// declare the videoType and videoId stores at the top level of the component
 	let videoType = 'youtube';
-  	let videoId = '';
+	let videoId = '';
+  
 	// callback function to handle the form submission
 	function handleSubmit({ type, id }) {
-  // add a console log statement to verify that the function is being called
-  console.log('handleSubmit called');
-  // update the type and videoId values in the app state
-  videoType = type;
-  videoId = id;
-}
-</script>
-
-
-
-<style>
-
-</style>
-<VideoSelector on:submit={handleSubmit}/>
-<VideoEmbed type={videoType} videoId={videoId} />
-
-<ChatFeed />
+	  // update the type and videoId values in the app state
+	  videoType = type;
+	  videoId = id;
+	}
+  </script>
+  
+  <style>
+	/* styles for the app go here */
+  </style>
+  
+  <VideoSelector on:submit={handleSubmit} />
+  <VideoEmbed type={videoType} videoId={videoId} />
+  <ChatFeed />
+  
